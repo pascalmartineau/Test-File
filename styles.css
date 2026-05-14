@@ -5,70 +5,136 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, #009246 0%, #FFFFFF 50%, #CE2B37 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+body::before {
+    content: '🇮🇹 🍝';
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 2em;
+}
+
+body::after {
+    content: '🇮🇹 🍝';
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2em;
 }
 
 .container {
     text-align: center;
     background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    padding: 50px 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     max-width: 500px;
     width: 90%;
+    border: 5px solid #009246;
+    position: relative;
 }
 
 h1 {
-    color: #333;
+    color: #009246;
+    margin-bottom: 10px;
+    font-size: 3.5em;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    color: #CE2B37;
+    font-size: 1.3em;
     margin-bottom: 30px;
-    font-size: 2.5em;
+    font-weight: 700;
+    font-style: italic;
 }
 
 .chooser-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #CE2B37 0%, #009246 100%);
     color: white;
-    border: none;
-    padding: 15px 40px;
-    font-size: 1.2em;
-    border-radius: 50px;
+    border: 3px solid white;
+    padding: 18px 50px;
+    font-size: 1.3em;
+    border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    margin-bottom: 30px;
-    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-bottom: 40px;
+    font-weight: 900;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+    box-shadow: 0 6px 15px rgba(206, 43, 55, 0.4);
 }
 
 .chooser-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(206, 43, 55, 0.6);
+    border-color: #FFFFFF;
 }
 
 .chooser-btn:active {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .result {
-    font-size: 3em;
-    font-weight: bold;
-    color: #667eea;
-    min-height: 60px;
+    font-size: 3.5em;
+    font-weight: 900;
+    color: white;
+    min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fadeIn 0.5s ease-in;
+    animation: italianFlip 0.8s ease-in-out;
+    background: linear-gradient(135deg, #009246 0%, #CE2B37 100%);
+    border-radius: 8px;
+    padding: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes fadeIn {
-    from {
+@keyframes italianFlip {
+    0% {
         opacity: 0;
-        transform: scale(0.8);
+        transform: rotateY(-90deg) scale(0.5);
     }
-    to {
+    50% {
+        opacity: 0.8;
+    }
+    100% {
         opacity: 1;
-        transform: scale(1);
+        transform: rotateY(0deg) scale(1);
     }
+}
+
+.italian-stripes {
+    display: flex;
+    height: 15px;
+    margin-top: 30px;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+}
+
+.stripe {
+    flex: 1;
+}
+
+.stripe.green {
+    background-color: #009246;
+}
+
+.stripe.white {
+    background-color: #FFFFFF;
+}
+
+.stripe.red {
+    background-color: #CE2B37;
 }
