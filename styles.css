@@ -12,22 +12,49 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
-body::before {
-    content: '🇮🇹 🍝';
+.pizza-decoration,
+.pasta-decoration {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 2em;
+    font-size: 4em;
+    opacity: 0.3;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
 }
 
-body::after {
-    content: '🇮🇹 🍝';
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 2em;
+.pizza-decoration.left {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.pizza-decoration.right {
+    bottom: 15%;
+    right: 5%;
+    animation-delay: 2s;
+}
+
+.pasta-decoration.left {
+    top: 60%;
+    left: 3%;
+    animation-delay: 1s;
+}
+
+.pasta-decoration.right {
+    bottom: 30%;
+    right: 3%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(10deg);
+    }
 }
 
 .container {
@@ -40,6 +67,7 @@ body::after {
     width: 90%;
     border: 5px solid #009246;
     position: relative;
+    z-index: 10;
 }
 
 h1 {
