@@ -12,49 +12,6 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
-}
-
-.pizza-decoration,
-.pasta-decoration {
-    position: fixed;
-    font-size: 4em;
-    opacity: 0.3;
-    z-index: 0;
-    animation: float 6s ease-in-out infinite;
-}
-
-.pizza-decoration.left {
-    top: 10%;
-    left: 5%;
-    animation-delay: 0s;
-}
-
-.pizza-decoration.right {
-    bottom: 15%;
-    right: 5%;
-    animation-delay: 2s;
-}
-
-.pasta-decoration.left {
-    top: 60%;
-    left: 3%;
-    animation-delay: 1s;
-}
-
-.pasta-decoration.right {
-    bottom: 30%;
-    right: 3%;
-    animation-delay: 3s;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-30px) rotate(10deg);
-    }
 }
 
 .container {
@@ -63,44 +20,92 @@ body {
     padding: 50px 40px 30px;
     border-radius: 10px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
-    width: 90%;
+    max-width: 700px;
+    width: 95%;
     border: 5px solid #009246;
     position: relative;
     z-index: 10;
 }
 
 h1 {
-    color: #009246;
-    margin-bottom: 10px;
-    font-size: 3.5em;
+    color: #CE2B37;
+    margin-bottom: 40px;
+    font-size: 2.2em;
     font-weight: 900;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.subtitle {
-    color: #CE2B37;
-    font-size: 1.3em;
-    margin-bottom: 30px;
-    font-weight: 700;
-    font-style: italic;
+.choices-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.choice-card {
+    background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 100%);
+    border: 3px solid #009246;
+    border-radius: 12px;
+    padding: 25px;
+    flex: 0 1 120px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.choice-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-color: #CE2B37;
+}
+
+.choice-emoji {
+    font-size: 4em;
+    margin-bottom: 10px;
+    display: block;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.courtney-card .choice-emoji {
+    animation-delay: 0s;
+}
+
+.sophia-card .choice-emoji {
+    animation-delay: 0.5s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.choice-name {
+    font-size: 1.4em;
+    font-weight: 900;
+    color: #009246;
+    letter-spacing: 1px;
 }
 
 .chooser-btn {
     background: linear-gradient(135deg, #CE2B37 0%, #009246 100%);
     color: white;
     border: 3px solid white;
-    padding: 18px 50px;
-    font-size: 1.3em;
-    border-radius: 5px;
+    padding: 20px 40px;
+    font-size: 1.4em;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 40px;
     font-weight: 900;
     font-family: 'Cinzel', serif;
     letter-spacing: 2px;
     box-shadow: 0 6px 15px rgba(206, 43, 55, 0.4);
+    min-width: 150px;
 }
 
 .chooser-btn:hover {
@@ -127,6 +132,7 @@ h1 {
     padding: 20px;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
 @keyframes italianFlip {
